@@ -1,6 +1,6 @@
 NAME	= blind-coiding-test
 
-COMPOSEFILE = ./docker compose.yml
+COMPOSEFILE = ./docker-compose.yml
 
 FILE = $(COMPOSEFILE)
 
