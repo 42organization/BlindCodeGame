@@ -1,6 +1,6 @@
 NAME	= blind-coiding-test
 
-COMPOSEFILE = ./docker-compose.yml
+COMPOSEFILE = ./docker compose.yml
 
 FILE = $(COMPOSEFILE)
 
@@ -11,7 +11,7 @@ BUILDFILE = $(FRONT_BUILDFILE) $(BACK_BUILDFILE)
 
 all		: $(BUILD) $(NAME)
 
-server : FILE = ./docker-compose.server-only.yml
+server : FILE = ./docker compose.server-only.yml
 server : $(NAME)
 
 
@@ -29,13 +29,13 @@ $(FRONT_BUILDFILE) :
 
 
 $(NAME) : $(BUILDFILE)
-	docker-compose -f $(FILE) up --build #--detach 
+	docker compose -f $(FILE) up --build #--detach 
 
 clean : 
-	docker-compose -f $(FILE)  down --rmi all --remove-orphans -v
+	docker compose -f $(FILE)  down --rmi all --remove-orphans -v
 
 ps		: 
-	docker-compose -f $(FILE) ps -a
+	docker compose -f $(FILE) ps -a
 
 fclean : clean cleanbuild
 	docker system prune --volumes --all --force
