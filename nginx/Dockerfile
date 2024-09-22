@@ -16,7 +16,7 @@ COPY ./conf/default.conf /etc/nginx/conf.d/default.conf
 
 # Generate SSL certificates
 RUN openssl genrsa -out /etc/ssl/private/my_key.key 2048
-RUN openssl req -x509 -nodes -days 365 -key /etc/ssl/private/my_key.key -out /etc/ssl/private/my_certificate.crt -subj "/C=KR/ST=SEOUL/L=Gaepodong/O=42Seoul/OU=wonljeon/CN=localhost"
+RUN openssl req -x509 -nodes -days 365 -key /etc/ssl/private/my_key.key -out /etc/ssl/private/my_certificate.crt -subj "/C=KR/ST=SEOUL/L=Gaepodong/O=42Seoul/OU=siwolee/CN=localhost"
 
 # Set permissions
 RUN chmod 700 /etc/ssl/private/my_key.key
